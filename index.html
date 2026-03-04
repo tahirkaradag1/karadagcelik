@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karadağ Çelik | Lazer Kesim ve Metal İşleme</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
-        /* SİNEMATİK 3 RENK PALETİ 
-           1. Karbon Siyahı: #0a0a0c
-           2. Çelik Grisi: #d1d5db (Metinler) ve #16181c (Kutular)
-           3. Lazer Kırmızısı: #ff1e1e
-        */
+        /* SİNEMATİK 3 RENK PALETİ */
         body { 
             background-color: #0a0a0c; 
-            color: #d1d5db; /* Sırıtan beyaz yerine yumuşak açık gri */
+            color: #d1d5db; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         }
         .text-laser { color: #ff1e1e !important; text-shadow: 0 0 10px rgba(255, 30, 30, 0.3); }
         .text-steel { color: #8b939c !important; }
         .bg-darker { background-color: #050505; }
         
-        /* Buton Tasarımı */
         .btn-laser { 
             background-color: #ff1e1e; 
             color: #fff; 
@@ -37,14 +33,12 @@
             transform: translateY(-2px);
         }
 
-        /* Ana Giriş */
         .hero-section { 
             padding: 100px 0; 
             border-bottom: 2px solid rgba(255, 30, 30, 0.5); 
             background: linear-gradient(180deg, #050505 0%, #0a0a0c 100%);
         }
 
-        /* Kartlar ve Formlar (Çelik Grisi Zemin) */
         .card-custom, .form-control {
             background-color: #16181c;
             border: 1px solid #2a2d35;
@@ -57,7 +51,6 @@
             box-shadow: 0 0 0 0.25rem rgba(255, 30, 30, 0.25);
         }
 
-        /* Özel Tablo Tasarımı (Karanlıkta kalma sorunu çözüldü) */
         .table-custom {
             background-color: #16181c;
             color: #d1d5db;
@@ -75,18 +68,42 @@
         .table-custom td {
             border-color: #2a2d35;
             vertical-align: middle;
-            transition: all 0.2s ease; /* Hover geçişi yumuşak olsun */
+            transition: all 0.2s ease; 
         }
-        
-        /* 🔥 ÇÖZÜM BURADA Dayıcım: Mouse üzerine gelince arka plan aydınlanıyor, yazılar okunur kalıyor */
         .table-custom tr:hover td {
-            background-color: #21252b !important; /* Hafif aydınlık arka plan */
-            color: #ffffff; /* Ana yazılar pure white */
+            background-color: #21252b !important; 
+            color: #ffffff; 
         }
-        /* Mouse üzerine gelince lazer kırmızısı olan kalınlıkların parlamasını artır */
         .table-custom tr:hover .text-laser {
             color: #ff5555 !important; 
             text-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
+        }
+
+        /* WhatsApp Dalgalanan Buton Tasarımı */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.7);
         }
     </style>
 </head>
@@ -115,7 +132,7 @@
             <div class="row g-4 mt-2">
                 <div class="col-md-4">
                     <div class="card card-custom h-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1610375461246-83df3e48bb9c?w=600" class="card-img-top" alt="Fiber Lazer Kesim" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
+                        <img src="1.jpg" class="card-img-top" alt="CNC Fiber Lazer Kesim" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
                             <h5 class="card-title text-white">CNC Fiber Lazer Kesim</h5>
                             <p class="card-text small text-steel">Yüksek hızlı fiber lazer ile sac, paslanmaz ve alüminyum malzemelerde pürüzsüz kesim.</p>
@@ -124,7 +141,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom h-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1531273934789-f53833214aa2?w=600" class="card-img-top" alt="Özel Kesim Projeleri" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
+                        <img src="2.jpg" class="card-img-top" alt="Özel Kesim Projeleri" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
                             <h5 class="card-title text-white">Özel Kesim Projeleri</h5>
                             <p class="card-text small text-steel">Karmaşık desenler ve milimetrik hassasiyet gerektiren endüstriyel parça üretimi.</p>
@@ -133,7 +150,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom h-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1589793134606-d079f53e1e93?w=600" class="card-img-top" alt="Abkant Büküm" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
+                        <img src="3.jpg" class="card-img-top" alt="Abkant Büküm" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
                             <h5 class="card-title text-white">Abkant Büküm</h5>
                             <p class="card-text small text-steel">Farklı kalınlık ve boydaki sacların milimetrik açılarla bükülmesi.</p>
@@ -236,6 +253,10 @@
             <p class="mb-0 mt-3 text-muted small">&copy; 2026 Karadağ Çelik. Tüm hakları saklıdır.</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/905334333875?text=Merhaba,%20lazer%20kesim%20için%20fiyat%20almak%20istiyorum." class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
 </body>
 </html>
