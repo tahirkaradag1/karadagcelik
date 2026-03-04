@@ -8,7 +8,7 @@
     <style>
         /* SİNEMATİK 3 RENK PALETİ 
            1. Karbon Siyahı: #0a0a0c
-           2. Çelik Grisi: #8b939c (Metinler) ve #16181c (Kutular)
+           2. Çelik Grisi: #d1d5db (Metinler) ve #16181c (Kutular)
            3. Lazer Kırmızısı: #ff1e1e
         */
         body { 
@@ -57,7 +57,7 @@
             box-shadow: 0 0 0 0.25rem rgba(255, 30, 30, 0.25);
         }
 
-        /* Özel Tablo Tasarımı (Sırıtan beyazlık giderildi) */
+        /* Özel Tablo Tasarımı (Karanlıkta kalma sorunu çözüldü) */
         .table-custom {
             background-color: #16181c;
             color: #d1d5db;
@@ -75,9 +75,18 @@
         .table-custom td {
             border-color: #2a2d35;
             vertical-align: middle;
+            transition: all 0.2s ease; /* Hover geçişi yumuşak olsun */
         }
+        
+        /* 🔥 ÇÖZÜM BURADA Dayıcım: Mouse üzerine gelince arka plan aydınlanıyor, yazılar okunur kalıyor */
         .table-custom tr:hover td {
-            background-color: #1c1f26;
+            background-color: #21252b !important; /* Hafif aydınlık arka plan */
+            color: #ffffff; /* Ana yazılar pure white */
+        }
+        /* Mouse üzerine gelince lazer kırmızısı olan kalınlıkların parlamasını artır */
+        .table-custom tr:hover .text-laser {
+            color: #ff5555 !important; 
+            text-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
         }
     </style>
 </head>
@@ -106,28 +115,28 @@
             <div class="row g-4 mt-2">
                 <div class="col-md-4">
                     <div class="card card-custom h-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Fiber Lazer Kesim" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
+                        <img src="https://images.unsplash.com/photo-1610375461246-83df3e48bb9c?w=600" class="card-img-top" alt="Fiber Lazer Kesim" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
-                            <h5 class="card-title text-white">Yüksek Hassasiyetli Kesim</h5>
-                            <p class="card-text small text-steel">Son teknoloji fiber lazer makinemiz ile pürüzsüz ve çapaksız kesim kalitesi.</p>
+                            <h5 class="card-title text-white">CNC Fiber Lazer Kesim</h5>
+                            <p class="card-text small text-steel">Yüksek hızlı fiber lazer ile sac, paslanmaz ve alüminyum malzemelerde pürüzsüz kesim.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom h-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Özel Kesim Projeleri" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
+                        <img src="https://images.unsplash.com/photo-1531273934789-f53833214aa2?w=600" class="card-img-top" alt="Özel Kesim Projeleri" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
                             <h5 class="card-title text-white">Özel Kesim Projeleri</h5>
-                            <p class="card-text small text-steel">Karmaşık desenler ve ince detaylar gerektiren her türlü metal parça üretimi.</p>
+                            <p class="card-text small text-steel">Karmaşık desenler ve milimetrik hassasiyet gerektiren endüstriyel parça üretimi.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom h-100 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1533381367098-4c24eaab62eb?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Abkant Büküm" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
+                        <img src="https://images.unsplash.com/photo-1589793134606-d079f53e1e93?w=600" class="card-img-top" alt="Abkant Büküm" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
-                            <h5 class="card-title text-white">Kusursuz Büküm</h5>
-                            <p class="card-text small text-steel">Milimetrik açılarla abkant pres büküm hizmeti.</p>
+                            <h5 class="card-title text-white">Abkant Büküm</h5>
+                            <p class="card-text small text-steel">Farklı kalınlık ve boydaki sacların milimetrik açılarla bükülmesi.</p>
                         </div>
                     </div>
                 </div>
@@ -141,9 +150,9 @@
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-4 text-white">Hizmet Kalemlerimiz</h3>
                     <ul class="list-group list-group-flush bg-transparent">
-                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Lazer Kesim (Sac, Paslanmaz, Alüminyum)</li>
-                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Abkant Pres Büküm İşleri</li>
-                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Gazaltı ve Argon Kaynak Montajı</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> CNC Lazer Kesim</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> CNC Abkant Büküm</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Kaynaklı İmalat</li>
                         <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Elektrostatik Toz Boya</li>
                     </ul>
                 </div>
@@ -151,10 +160,10 @@
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-4 text-white">Teknik Kapasite & Limitler</h3>
                     <div class="table-responsive">
-                        <table class="table table-custom mb-0">
+                        <table class="table table-custom mb-0 table-borderless">
                             <thead>
                                 <tr>
-                                    <th>Malzeme</th>
+                                    <th>Malzeme Türü</th>
                                     <th class="text-end">Maksimum Kalınlık</th>
                                 </tr>
                             </thead>
@@ -172,8 +181,8 @@
                                     <td class="text-end text-laser fw-bold fs-5">10 mm</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="text-center small text-steel" style="background-color: #121418;">
-                                        Kesim Hassasiyeti: <span class="text-white">&plusmn; 0.1 mm</span>
+                                    <td colspan="2" class="text-center small text-steel pt-4" style="background-color: transparent;">
+                                        Kesim Hassasiyeti: <span class="text-white fw-bold">&plusmn; 0.1 mm</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -190,25 +199,25 @@
                 <div class="col-md-8">
                     <div class="text-center mb-5">
                         <h2 class="fw-bold text-white"><span class="text-laser">Dosyanızı Yükleyin</span> Teklif Verelim</h2>
-                        <p class="text-steel">Projenizi DXF, DWG veya PDF formatında yükleyin, adet ve malzeme detayını yazın. En kısa sürede fiyatlandıralım.</p>
+                        <p class="text-steel">Projenizi DXF, DWG veya PDF formatında yükleyin. En kısa sürede fiyatlandıralım.</p>
                     </div>
                     <form class="p-4 card-custom rounded shadow-lg">
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label text-steel small text-uppercase tracking-wide">Firma Adı / Adınız</label>
-                                <input type="text" class="form-control" placeholder="Firma Adı">
+                                <input type="text" class="form-control form-control-lg" placeholder="Firma Adı">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label text-steel small text-uppercase tracking-wide">Telefon</label>
-                                <input type="tel" class="form-control" placeholder="05XX XXX XX XX">
+                                <input type="tel" class="form-control form-control-lg" placeholder="05XX XXX XX XX">
                             </div>
                             <div class="col-12">
                                 <label class="form-label text-steel small text-uppercase tracking-wide">Proje Dosyası (DXF, DWG, PDF)</label>
-                                <input type="file" class="form-control">
+                                <input type="file" class="form-control form-control-lg">
                             </div>
                             <div class="col-12">
                                 <label class="form-label text-steel small text-uppercase tracking-wide">Sipariş Detayları</label>
-                                <textarea class="form-control" rows="4" placeholder="Örn: 5mm paslanmaz sacdan eklentideki dosyaya göre 150 adet kesilecek..."></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Örn: 5mm paslanmaz sacdan 150 adet kesilecek..."></textarea>
                             </div>
                             <div class="col-12 text-center mt-4">
                                 <button type="button" class="btn btn-laser btn-lg w-100">Teklifi Gönder</button>
