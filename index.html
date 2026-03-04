@@ -6,98 +6,128 @@
     <title>Karadağ Çelik | Lazer Kesim ve Metal İşleme</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* SİNEMATİK 3 RENK PALETİ 
+           1. Karbon Siyahı: #0a0a0c
+           2. Çelik Grisi: #8b939c (Metinler) ve #16181c (Kutular)
+           3. Lazer Kırmızısı: #ff1e1e
+        */
         body { 
-            background-color: #1a1a1a; 
-            color: #f8f9fa; 
+            background-color: #0a0a0c; 
+            color: #d1d5db; /* Sırıtan beyaz yerine yumuşak açık gri */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         }
-        .text-orange { color: #fd7e14 !important; }
-        .bg-darker { background-color: #121212; }
-        .btn-orange { 
-            background-color: #fd7e14; 
+        .text-laser { color: #ff1e1e !important; text-shadow: 0 0 10px rgba(255, 30, 30, 0.3); }
+        .text-steel { color: #8b939c !important; }
+        .bg-darker { background-color: #050505; }
+        
+        /* Buton Tasarımı */
+        .btn-laser { 
+            background-color: #ff1e1e; 
             color: #fff; 
             font-weight: bold; 
             border: none; 
-            padding: 10px 25px;
+            padding: 12px 30px;
+            box-shadow: 0 4px 15px rgba(255, 30, 30, 0.2);
+            transition: all 0.3s ease;
         }
-        .btn-orange:hover { background-color: #e86e04; color: #fff; }
+        .btn-laser:hover { 
+            background-color: #d61515; 
+            color: #fff; 
+            box-shadow: 0 6px 20px rgba(255, 30, 30, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Ana Giriş */
         .hero-section { 
             padding: 100px 0; 
-            border-bottom: 3px solid #fd7e14; 
-            background-color: #121212;
+            border-bottom: 2px solid rgba(255, 30, 30, 0.5); 
+            background: linear-gradient(180deg, #050505 0%, #0a0a0c 100%);
         }
-        .table { color: #e0e0e0; }
-        .table-dark-custom { background-color: #2d2d2d; }
-        .form-control { 
-            background-color: #2d2d2d; 
-            border: 1px solid #444; 
-            color: white; 
+
+        /* Kartlar ve Formlar (Çelik Grisi Zemin) */
+        .card-custom, .form-control {
+            background-color: #16181c;
+            border: 1px solid #2a2d35;
+            color: #d1d5db;
         }
         .form-control:focus {
-            background-color: #2d2d2d;
-            color: white;
-            border-color: #fd7e14;
-            box-shadow: 0 0 0 0.25rem rgba(253, 126, 20, 0.25);
+            background-color: #16181c;
+            color: #fff;
+            border-color: #ff1e1e;
+            box-shadow: 0 0 0 0.25rem rgba(255, 30, 30, 0.25);
         }
-        .card-custom {
-            background-color: #2d2d2d;
-            border: 1px solid #444;
+
+        /* Özel Tablo Tasarımı (Sırıtan beyazlık giderildi) */
+        .table-custom {
+            background-color: #16181c;
+            color: #d1d5db;
+            border: 1px solid #2a2d35;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table-custom th {
+            background-color: #1a1c23;
+            color: #fff;
+            border-bottom: 2px solid #ff1e1e;
+            border-color: #2a2d35;
+            font-weight: 600;
+        }
+        .table-custom td {
+            border-color: #2a2d35;
+            vertical-align: middle;
+        }
+        .table-custom tr:hover td {
+            background-color: #1c1f26;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-darker py-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darker py-3 border-bottom border-dark">
         <div class="container">
-            <a class="navbar-brand fs-3 fw-bold" href="#"><span class="text-orange">KARADAĞ</span> ÇELİK</a>
+            <a class="navbar-brand fs-3 fw-bold tracking-wide" href="#"><span class="text-laser">KARADAĞ</span> ÇELİK</a>
             <div class="ms-auto">
-                <a href="#teklif" class="btn btn-outline-light btn-sm">Teklif İste</a>
+                <a href="#teklif" class="btn btn-outline-light btn-sm" style="border-color: #444; color: #bbb;">Teklif İste</a>
             </div>
         </div>
     </nav>
 
     <section class="hero-section text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Hassas Kesim, <span class="text-orange">Sağlam Üretim.</span></h1>
-            <p class="lead mb-4">Mersin'de endüstriyel standartlarda lazer kesim, abkant büküm ve metal işleme çözümleri.</p>
-            <a href="#teklif" class="btn btn-orange btn-lg">Projenizi Fiyatlandıralım</a>
+            <h1 class="display-4 fw-bold mb-4 text-white">Hassas Kesim, <span class="text-laser">Sağlam Üretim.</span></h1>
+            <p class="lead mb-4 text-steel">Mersin'de endüstriyel standartlarda lazer kesim, abkant büküm ve metal işleme çözümleri.</p>
+            <a href="#teklif" class="btn btn-laser btn-lg mt-2">Projenizi Fiyatlandıralım</a>
         </div>
     </section>
 
     <section class="py-5">
         <div class="container">
-            <h3 class="fw-bold mb-4 text-center border-bottom border-secondary pb-3">Makine Parkuru & Örnek İşler</h3>
+            <h3 class="fw-bold mb-5 text-center text-white">Makine Parkuru & Örnek İşler</h3>
             <div class="row g-4 mt-2">
                 <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div style="height: 200px; background-color: #444; display:flex; align-items:center; justify-content:center;">
-                            <span class="text-muted">Fiber Lazer Makinesi Görseli</span>
-                        </div>
+                    <div class="card card-custom h-100 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Fiber Lazer Kesim" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
-                            <h5 class="card-title text-orange">Yüksek Hassasiyetli Kesim</h5>
-                            <p class="card-text small">Son teknoloji fiber lazer makinemiz ile pürüzsüz ve çapaksız kesim kalitesi.</p>
+                            <h5 class="card-title text-white">Yüksek Hassasiyetli Kesim</h5>
+                            <p class="card-text small text-steel">Son teknoloji fiber lazer makinemiz ile pürüzsüz ve çapaksız kesim kalitesi.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div style="height: 200px; background-color: #444; display:flex; align-items:center; justify-content:center;">
-                            <span class="text-muted">Örnek Kesim Parçası Görseli</span>
-                        </div>
+                    <div class="card card-custom h-100 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Özel Kesim Projeleri" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
-                            <h5 class="card-title text-orange">Özel Kesim Projeleri</h5>
-                            <p class="card-text small">Karmaşık desenler ve ince detaylar gerektiren her türlü metal parça üretimi.</p>
+                            <h5 class="card-title text-white">Özel Kesim Projeleri</h5>
+                            <p class="card-text small text-steel">Karmaşık desenler ve ince detaylar gerektiren her türlü metal parça üretimi.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div style="height: 200px; background-color: #444; display:flex; align-items:center; justify-content:center;">
-                            <span class="text-muted">Abkant Büküm Görseli</span>
-                        </div>
+                    <div class="card card-custom h-100 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1533381367098-4c24eaab62eb?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Abkant Büküm" style="height: 220px; object-fit: cover; border-bottom: 2px solid #ff1e1e;">
                         <div class="card-body">
-                            <h5 class="card-title text-orange">Kusursuz Büküm</h5>
-                            <p class="card-text small">Milimetrik açılarla abkant pres büküm hizmeti.</p>
+                            <h5 class="card-title text-white">Kusursuz Büküm</h5>
+                            <p class="card-text small text-steel">Milimetrik açılarla abkant pres büküm hizmeti.</p>
                         </div>
                     </div>
                 </div>
@@ -109,42 +139,46 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6">
-                    <h3 class="fw-bold mb-4 border-bottom border-secondary pb-2">Hizmet Kalemlerimiz</h3>
+                    <h3 class="fw-bold mb-4 text-white">Hizmet Kalemlerimiz</h3>
                     <ul class="list-group list-group-flush bg-transparent">
-                        <li class="list-group-item bg-transparent text-light border-secondary px-0">⚙️ Lazer Kesim (Sac, Paslanmaz, Alüminyum)</li>
-                        <li class="list-group-item bg-transparent text-light border-secondary px-0">⚙️ Abkant Pres Büküm İşleri</li>
-                        <li class="list-group-item bg-transparent text-light border-secondary px-0">⚙️ Gazaltı ve Argon Kaynak Montajı</li>
-                        <li class="list-group-item bg-transparent text-light border-secondary px-0">⚙️ Elektrostatik Toz Boya</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Lazer Kesim (Sac, Paslanmaz, Alüminyum)</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Abkant Pres Büküm İşleri</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Gazaltı ve Argon Kaynak Montajı</li>
+                        <li class="list-group-item bg-transparent text-steel border-dark px-0"><span class="text-laser me-2">■</span> Elektrostatik Toz Boya</li>
                     </ul>
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="fw-bold mb-4 border-bottom border-secondary pb-2">Teknik Kapasite & Limitler</h3>
-                    <table class="table table-bordered border-secondary table-dark-custom">
-                        <thead>
-                            <tr>
-                                <th>Malzeme</th>
-                                <th>Maksimum Kalınlık</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Siyah Sac (DKP/HRP)</td>
-                                <td class="text-orange fw-bold">20 mm</td>
-                            </tr>
-                            <tr>
-                                <td>Paslanmaz Çelik</td>
-                                <td class="text-orange fw-bold">12 mm</td>
-                            </tr>
-                            <tr>
-                                <td>Alüminyum</td>
-                                <td class="text-orange fw-bold">10 mm</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="text-center small text-muted">Kesim Hassasiyeti: &plusmn; 0.1 mm</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h3 class="fw-bold mb-4 text-white">Teknik Kapasite & Limitler</h3>
+                    <div class="table-responsive">
+                        <table class="table table-custom mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Malzeme</th>
+                                    <th class="text-end">Maksimum Kalınlık</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Siyah Sac (DKP/HRP)</td>
+                                    <td class="text-end text-laser fw-bold fs-5">20 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Paslanmaz Çelik</td>
+                                    <td class="text-end text-laser fw-bold fs-5">12 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Alüminyum</td>
+                                    <td class="text-end text-laser fw-bold fs-5">10 mm</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="text-center small text-steel" style="background-color: #121418;">
+                                        Kesim Hassasiyeti: <span class="text-white">&plusmn; 0.1 mm</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,30 +188,30 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="text-center mb-4">
-                        <h2 class="fw-bold"><span class="text-orange">Dosyanızı Yükleyin</span> Teklif Verelim</h2>
-                        <p class="text-muted">Projenizi DXF, DWG veya PDF formatında yükleyin, adet ve malzeme detayını yazın. En kısa sürede fiyatlandıralım.</p>
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold text-white"><span class="text-laser">Dosyanızı Yükleyin</span> Teklif Verelim</h2>
+                        <p class="text-steel">Projenizi DXF, DWG veya PDF formatında yükleyin, adet ve malzeme detayını yazın. En kısa sürede fiyatlandıralım.</p>
                     </div>
-                    <form class="p-4 card-custom rounded">
-                        <div class="row g-3">
+                    <form class="p-4 card-custom rounded shadow-lg">
+                        <div class="row g-4">
                             <div class="col-md-6">
-                                <label class="form-label text-light">Adınız Soyadınız / Firma Adı</label>
+                                <label class="form-label text-steel small text-uppercase tracking-wide">Firma Adı / Adınız</label>
                                 <input type="text" class="form-control" placeholder="Firma Adı">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label text-light">Telefon Numaranız</label>
+                                <label class="form-label text-steel small text-uppercase tracking-wide">Telefon</label>
                                 <input type="tel" class="form-control" placeholder="05XX XXX XX XX">
                             </div>
                             <div class="col-12">
-                                <label class="form-label text-light">Proje Dosyası (DXF, DWG, PDF)</label>
+                                <label class="form-label text-steel small text-uppercase tracking-wide">Proje Dosyası (DXF, DWG, PDF)</label>
                                 <input type="file" class="form-control">
                             </div>
                             <div class="col-12">
-                                <label class="form-label text-light">Sipariş Detayları (Adet, Kalınlık, Malzeme)</label>
+                                <label class="form-label text-steel small text-uppercase tracking-wide">Sipariş Detayları</label>
                                 <textarea class="form-control" rows="4" placeholder="Örn: 5mm paslanmaz sacdan eklentideki dosyaya göre 150 adet kesilecek..."></textarea>
                             </div>
                             <div class="col-12 text-center mt-4">
-                                <button type="button" class="btn btn-orange btn-lg w-100">Teklif İste</button>
+                                <button type="button" class="btn btn-laser btn-lg w-100">Teklifi Gönder</button>
                             </div>
                         </div>
                     </form>
@@ -186,11 +220,11 @@
         </div>
     </section>
 
-    <footer class="py-4 text-center border-top border-secondary bg-darker">
+    <footer class="py-4 text-center bg-darker border-top" style="border-color: #1a1c23 !important;">
         <div class="container">
-            <p class="mb-1"><strong>Adres:</strong> Mersin, Türkiye</p>
-            <p class="mb-1"><strong>E-Posta:</strong> info@karadagcelik.com</p>
-            <p class="mb-0 text-muted small">&copy; 2026 Karadağ Çelik. Tüm hakları saklıdır.</p>
+            <p class="mb-1 text-steel"><strong>Adres:</strong> Mersin, Türkiye</p>
+            <p class="mb-1 text-steel"><strong>E-Posta:</strong> info@karadagcelik.com</p>
+            <p class="mb-0 mt-3 text-muted small">&copy; 2026 Karadağ Çelik. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
