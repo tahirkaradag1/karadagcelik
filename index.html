@@ -33,11 +33,40 @@
             transform: translateY(-2px);
         }
 
+        /* --- VİDEOLU ANA GİRİŞ (HERO) AYARLARI --- */
         .hero-section { 
-            padding: 100px 0; 
+            position: relative;
+            padding: 140px 0; /* Video daha iyi görünsün diye biraz daha genişlettik */
             border-bottom: 2px solid rgba(255, 30, 30, 0.5); 
-            background: linear-gradient(180deg, #050505 0%, #0a0a0c 100%);
+            overflow: hidden; /* Taşan videoyu kes */
         }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 0;
+            object-fit: cover;
+            opacity: 0.4; /* Videonun saydamlığı (0.4 çok idealdir) */
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(5,5,5,0.7) 0%, rgba(10,10,12,0.95) 100%);
+            z-index: 1; /* Videonun üstüne, yazının altına siyah geçişli filtre */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Yazıların ve butonların tıklanabilir kalması için en üstte tutuyoruz */
+        }
+        /* ------------------------------------------ */
 
         .card-custom, .form-control {
             background-color: #16181c;
@@ -79,7 +108,7 @@
             text-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
         }
 
-        /* WhatsApp Dalgalanan Buton Tasarımı */
+        /* WhatsApp Butonu */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -109,7 +138,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-darker py-3 border-bottom border-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darker py-3 border-bottom border-dark position-relative" style="z-index: 10;">
         <div class="container">
             <a class="navbar-brand fs-3 fw-bold tracking-wide" href="#"><span class="text-laser">KARADAĞ</span> ÇELİK</a>
             <div class="ms-auto">
@@ -119,7 +148,12 @@
     </nav>
 
     <section class="hero-section text-center">
-        <div class="container">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content">
             <h1 class="display-4 fw-bold mb-4 text-white">Hassas Kesim, <span class="text-laser">Sağlam Üretim.</span></h1>
             <p class="lead mb-4 text-steel">Mersin'de endüstriyel standartlarda lazer kesim, abkant büküm ve metal işleme çözümleri.</p>
             <a href="#teklif" class="btn btn-laser btn-lg mt-2">Projenizi Fiyatlandıralım</a>
@@ -254,7 +288,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/905334333875?text=Merhaba,%20lazer%20kesim%20için%20fiyat%20almak%20istiyorum." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/905000000000?text=Merhaba,%20lazer%20kesim%20için%20fiyat%20almak%20istiyorum." class="whatsapp-float" target="_blank">
         <i class="bi bi-whatsapp"></i>
     </a>
 
