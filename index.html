@@ -252,26 +252,22 @@
                         <h2 class="fw-bold text-white"><span class="text-laser">Dosyanızı Yükleyin</span> Teklif Verelim</h2>
                         <p class="text-steel">Projenizi DXF, DWG veya PDF formatında yükleyin. En kısa sürede fiyatlandıralım.</p>
                     </div>
-                    <form class="p-4 card-custom rounded shadow-lg">
+<form action="https://formspree.io/f/mlgpraar" method="POST" class="p-4 card-custom rounded shadow-lg">
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label text-steel small text-uppercase tracking-wide">Firma Adı / Adınız</label>
-                                <input type="text" class="form-control form-control-lg" placeholder="Firma Adı">
+                                <input type="text" name="Ad_Soyad" class="form-control form-control-lg" placeholder="Firma Adı" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label text-steel small text-uppercase tracking-wide">Telefon</label>
-                                <input type="tel" class="form-control form-control-lg" placeholder="05XX XXX XX XX">
+                                <input type="tel" name="Telefon" class="form-control form-control-lg" placeholder="05XX XXX XX XX" required>
                             </div>
                             <div class="col-12">
-                                <label class="form-label text-steel small text-uppercase tracking-wide">Proje Dosyası (DXF, DWG, PDF)</label>
-                                <input type="file" class="form-control form-control-lg">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label text-steel small text-uppercase tracking-wide">Sipariş Detayları</label>
-                                <textarea class="form-control" rows="4" placeholder="Örn: 5mm paslanmaz sacdan 150 adet kesilecek..."></textarea>
+                                <label class="form-label text-steel small text-uppercase tracking-wide">Sipariş Detayları (Dosyanız varsa WhatsApp'tan gönderebilirsiniz)</label>
+                                <textarea name="Siparis_Detayi" class="form-control" rows="4" placeholder="Örn: 5mm paslanmaz sacdan 150 adet kesilecek..." required></textarea>
                             </div>
                             <div class="col-12 text-center mt-4">
-                                <button type="button" class="btn btn-laser btn-lg w-100">Teklifi Gönder</button>
+                                <button type="submit" class="btn btn-laser btn-lg w-100">Teklifi Gönder</button>
                             </div>
                         </div>
                     </form>
