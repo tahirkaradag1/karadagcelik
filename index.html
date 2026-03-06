@@ -3,137 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karadağ Çelik | Lazer Kesim ve Metal İşleme</title>
+    
+    <title>Karadağ Çelik | Mersin Lazer Kesim ve Abkant Büküm</title>
+    <meta name="description" content="Mersin'de endüstriyel standartlarda CNC fiber lazer kesim, abkant pres büküm ve metal işleme hizmetleri. Karadağ Çelik güvencesiyle hassas ve sağlam üretim.">
+    <meta name="keywords" content="Mersin lazer kesim, Karadağ Çelik, CNC abkant büküm, sac kesim Mersin, paslanmaz lazer kesim, fason metal işleme, alüminyum kesim, Mersin sanayi lazer">
+    <meta name="author" content="Karadağ Çelik">
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         /* SİNEMATİK 3 RENK PALETİ */
-        body { 
-            background-color: #0a0a0c; 
-            color: #d1d5db; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        }
+        body { background-color: #0a0a0c; color: #d1d5db; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         .text-laser { color: #ff1e1e !important; text-shadow: 0 0 10px rgba(255, 30, 30, 0.3); }
         .text-steel { color: #8b939c !important; }
         .bg-darker { background-color: #050505; }
         
-        .btn-laser { 
-            background-color: #ff1e1e; 
-            color: #fff; 
-            font-weight: bold; 
-            border: none; 
-            padding: 12px 30px;
-            box-shadow: 0 4px 15px rgba(255, 30, 30, 0.2);
-            transition: all 0.3s ease;
-        }
-        .btn-laser:hover { 
-            background-color: #d61515; 
-            color: #fff; 
-            box-shadow: 0 6px 20px rgba(255, 30, 30, 0.4);
-            transform: translateY(-2px);
-        }
+        .btn-laser { background-color: #ff1e1e; color: #fff; font-weight: bold; border: none; padding: 12px 30px; box-shadow: 0 4px 15px rgba(255, 30, 30, 0.2); transition: all 0.3s ease; }
+        .btn-laser:hover { background-color: #d61515; color: #fff; box-shadow: 0 6px 20px rgba(255, 30, 30, 0.4); transform: translateY(-2px); }
 
-        /* --- VİDEOLU ANA GİRİŞ (HERO) AYARLARI --- */
-        .hero-section { 
-            position: relative;
-            padding: 140px 0; /* Video daha iyi görünsün diye biraz daha genişlettik */
-            border-bottom: 2px solid rgba(255, 30, 30, 0.5); 
-            overflow: hidden; /* Taşan videoyu kes */
-        }
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
-            z-index: 0;
-            object-fit: cover;
-            opacity: 0.7; /* Videonun saydamlığı (0.4 çok idealdir) */
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(5,5,5,0.7) 0%, rgba(10,10,12,0.95) 100%);
-            z-index: 1; /* Videonun üstüne, yazının altına siyah geçişli filtre */
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2; /* Yazıların ve butonların tıklanabilir kalması için en üstte tutuyoruz */
-        }
-        /* ------------------------------------------ */
+        .hero-section { position: relative; padding: 140px 0; border-bottom: 2px solid rgba(255, 30, 30, 0.5); overflow: hidden; }
+        .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover; opacity: 0.7; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(5,5,5,0.7) 0%, rgba(10,10,12,0.95) 100%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
 
-        .card-custom, .form-control {
-            background-color: #16181c;
-            border: 1px solid #2a2d35;
-            color: #d1d5db;
-        }
-        .form-control:focus {
-            background-color: #16181c;
-            color: #fff;
-            border-color: #ff1e1e;
-            box-shadow: 0 0 0 0.25rem rgba(255, 30, 30, 0.25);
-        }
+        .card-custom, .form-control { background-color: #16181c; border: 1px solid #2a2d35; color: #d1d5db; }
+        .form-control:focus { background-color: #16181c; color: #fff; border-color: #ff1e1e; box-shadow: 0 0 0 0.25rem rgba(255, 30, 30, 0.25); }
 
-        .table-custom {
-            background-color: #16181c;
-            color: #d1d5db;
-            border: 1px solid #2a2d35;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .table-custom th {
-            background-color: #1a1c23;
-            color: #fff;
-            border-bottom: 2px solid #ff1e1e;
-            border-color: #2a2d35;
-            font-weight: 600;
-        }
-        .table-custom td {
-            border-color: #2a2d35;
-            vertical-align: middle;
-            transition: all 0.2s ease; 
-        }
-        .table-custom tr:hover td {
-            background-color: #21252b !important; 
-            color: #ffffff; 
-        }
-        .table-custom tr:hover .text-laser {
-            color: #ff5555 !important; 
-            text-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
-        }
+        .table-custom { background-color: #16181c; color: #d1d5db; border: 1px solid #2a2d35; border-radius: 8px; overflow: hidden; }
+        .table-custom th { background-color: #1a1c23; color: #fff; border-bottom: 2px solid #ff1e1e; border-color: #2a2d35; font-weight: 600; }
+        .table-custom td { border-color: #2a2d35; vertical-align: middle; transition: all 0.2s ease; }
+        .table-custom tr:hover td { background-color: #21252b !important; color: #ffffff; }
+        .table-custom tr:hover .text-laser { color: #ff5555 !important; text-shadow: 0 0 15px rgba(255, 85, 85, 0.5); }
 
-        /* WhatsApp Butonu */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 32px;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            color: #FFF;
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(37, 211, 102, 0.7);
-        }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 32px; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; }
+        .whatsapp-float:hover { background-color: #128C7E; color: #FFF; transform: scale(1.1); box-shadow: 0 0 25px rgba(37, 211, 102, 0.7); }
     </style>
 </head>
 <body>
